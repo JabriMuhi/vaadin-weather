@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:14
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=weather
+      - TZ=Europe/Moscow
+      - LANG=C.UTF-8
+
+volumes:
+  postgres_data:
